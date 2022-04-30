@@ -1,3 +1,12 @@
+/*! 
+ *  \brief     Password manager
+ *  \details   Paman is a CLI tool to manage your passwords.
+ *  \author    Julio Cesar Kochhann
+ *  \version   0.1.0
+ *  \date      Apr 2022
+ *  \copyright MIT License
+ */
+
 #include <assert.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -25,6 +34,12 @@ char* rand_ps(void);
             [-q <search-query>]\n \
             [-e] [-h] [-l] [-r] [-v]")
 
+/*! \fn int main(int argc, char* argv[])
+ *  \brief The main function of paman.
+ *  \param argc an integer.
+ *  \param argv a pointer to a character pointer.
+ *  \return an integer.
+ */
 int main(int argc, char* argv[])
 {
     FILE* fp = fopen(FILENAME, "a+");
@@ -85,6 +100,11 @@ int main(int argc, char* argv[])
     exit(EXIT_SUCCESS);
 }
 
+/*! \fn char* cipher(char* buf)
+ *  \brief Encrypt or decrypt a string.
+ *  \param buf a character pointer.
+ *  \return a character pointer.
+ */
 char* cipher(char* buf)
 {
     char* temp = buf;
@@ -97,6 +117,12 @@ char* cipher(char* buf)
     return temp;
 }
 
+/*! \fn void put_file(FILE* fp, FILE* stream) 
+ *  \brief Encrypt/decrypt a file and write it to a stream.
+ *  \param fp a FILE pointer.
+ *  \param stream a FILE pointer.
+ *  \return void.
+ */
 void put_file(FILE* fp, FILE* stream)
 {
     char* file;
@@ -108,6 +134,12 @@ void put_file(FILE* fp, FILE* stream)
     fputs(file, stream);
 }
 
+/*! \fn int read_file(FILE* fp, char** buf)
+ *  \brief Read a file into a buffer.
+ *  \param fp a FILE pointer.
+ *  \param buf a pointer to a character pointer.
+ *  \return an integer.
+ */
 int read_file(FILE* fp, char** buf)
 {
     char c;
@@ -137,6 +169,13 @@ int read_file(FILE* fp, char** buf)
     return n;
 }
 
+/*! \fn void insert(FILE* fp, char* str)
+ *  \brief Insert a credential into the database.
+ *  \param fp a FILE pointer.
+ *  \param str a character pointer.
+ *  \exception credential must be unique.
+ *  \return void.
+ */
 void insert(FILE* fp, char* str)
 {
     char* site   = strtok( str, ":" );
@@ -162,6 +201,12 @@ void insert(FILE* fp, char* str)
     fprintf(fp, "%s\n", cipher(cred));
 }
 
+/*! \fn int find(FILE* fp, char* str)
+ *  \brief Find credentials that contain the string.
+ *  \param fp a FILE pointer.
+ *  \param str a character pointer.
+ *  \return an integer.
+ */
 int find(FILE* fp, char* str)
 {
     char* file;
@@ -183,6 +228,10 @@ int find(FILE* fp, char* str)
     return n;
 }
 
+/*! \fn char* rand_ps(void)
+ *  \brief Generate a random string of PASS_LEN characters.
+ *  \return a character pointer to a static buffer.
+ */
 char* rand_ps(void)
 {
     static char pswd[PASS_LEN+1];
