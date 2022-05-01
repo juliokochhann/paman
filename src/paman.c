@@ -2,6 +2,13 @@
  *  \file paman.c
  *  \copyright MIT License
  */
+#include <assert.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include "paman.h"
 
 /*! \fn void cipher(char* buf)
  *  \brief Encrypt or decrypt a string.
