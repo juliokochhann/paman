@@ -1,3 +1,7 @@
+/*! 
+ *  \file paman.h
+ *  \copyright MIT License
+ */
 #ifndef PAMAN_H
 #define PAMAN_H
 
