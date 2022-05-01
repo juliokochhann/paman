@@ -22,39 +22,37 @@ int main(int argc, char* argv[])
 
     int opt;
     opterr = 0;
-
-    while ((opt = getopt(argc, argv, ":a:c:ehlq:rv")) != -1) {
+    while ((opt = getopt(argc, argv, ":a:c:dehls:v")) != -1) {
         switch (opt) {
-            case 'a':
+            case 'a':           /*!< Insert credential at the end of file fp (append) */
                 insert(fp, optarg);
                 break;
-            case 'c': ;
-                FILE* f = fopen(optarg, "r+");
-                assert(f != NULL);
-                put_file(f, f);     // filechar = cipher(filechar)
+            case 'c': ;         /*! Convert file <optarg> to cipher/text */
+                FILE* cf = fopen(optarg, "r+");
+                assert(cf != NULL);
+                put_file(cf, cf);
                 break;
-            case 'e': ;
-                FILE* of = fopen(FILENAME"_plain_text", "w");
+            case 'd':           /*! Delete the database file */
+                printf("Do you want to delete " FILENAME "? (Y/n): ");
+                if (getchar() == 'Y') {
+                    fclose(fp);
+                    assert(!remove(FILENAME));
+                    printf(FILENAME " deleted.\n");
+                }
+                break;
+            case 'e': ;         /*!< Export the database file to plain text */
+                FILE* of = fopen(FILENAME "_plain.txt", "w");
+                assert(of != NULL);
                 put_file(fp, of);
                 break;
             case 'h':
                 print_help();
                 break;
-            case 'l':
+            case 'l':           /*! List all credentials */
                 put_file(fp, stdout);
                 break;
-            case 'q':
-                find(fp, optarg);
-                break;
-            case 'r':
-                printf("Do you want to permanently delete the database file? (Y/n): ");
-                if (getchar() == 'Y') {
-                    fclose(fp);
-
-                    assert(!remove(FILENAME));
-
-                    printf("database successfully deleted.\n");
-                }
+            case 's':           /*! Search for credentials that contain \a optarg */
+                search(fp, optarg);
                 break;
             case 'v':
                 print_version();
@@ -72,24 +70,23 @@ int main(int argc, char* argv[])
         }
     }
 
+    if (argc == 1)
+        print_help();
+
     exit(EXIT_SUCCESS);
 }
 
-/*! \fn char* cipher(char* buf)
+/*! \fn void cipher(char* buf)
  *  \brief Encrypt or decrypt a string.
  *  \param buf a character pointer.
- *  \return a character pointer.
+ *  \return void.
  */
-char* cipher(char* buf)
+void cipher(char* buf)
 {
-    char* temp = buf;
-
     while (*buf) {
         *buf ^= CIPHER_KEY;
         buf++;
     }
-
-    return temp;
 }
 
 /*! \fn void put_file(FILE* fp, FILE* stream) 
@@ -103,10 +100,9 @@ void put_file(FILE* fp, FILE* stream)
     char* file;
 
     read_file(fp, &file);
-
     cipher(file);
-
     fputs(file, stream);
+    free(file);
 }
 
 /*! \fn int read_file(FILE* fp, char** buf)
@@ -153,41 +149,46 @@ int read_file(FILE* fp, char** buf)
  */
 void insert(FILE* fp, char* str)
 {
-    char* site   = strtok( str, ":" );
+    char* domain   = strtok( str, ":" );
     char* username = strtok(NULL, "\0");
-    char* ps = rand_ps();
+    char* password = rand_ps();
 
     if (username == NULL) {
+        fprintf(stderr, "error: username not set.\n");
         print_help();
         exit(EXIT_FAILURE);
     }
 
-    char* cred = (char *) malloc(strlen(site) + strlen(username) + PASS_LEN + 4);
+    char* cred = (char *) malloc(strlen(domain) + strlen(username) + PASS_LEN + 4);
 
-    sprintf(cred, "%s %s", site, username);
+    sprintf(cred, "%s %s", domain, username);
 
-    if ( find(fp, cred) ) {
+    if ( search(fp, cred) ) {
         fprintf(stderr, "error: credential must be unique.\n");
         exit(EXIT_FAILURE);
     }
 
-    sprintf(cred, "%s %s %s", site, username, ps);
-    puts(cred);
-    fprintf(fp, "%s\n", cipher(cred));
+    sprintf(cred, "%s %s %s\n", domain, username, password);
+    puts(password);
+    cipher(cred);
+    fprintf(fp, "%s", cred);
 }
 
-/*! \fn int find(FILE* fp, char* str)
+/*! \fn int search(FILE* fp, char* str)
  *  \brief Find credentials that contain the string.
  *  \param fp a FILE pointer.
  *  \param str a character pointer.
  *  \return an integer.
  */
-int find(FILE* fp, char* str)
+int search(FILE* fp, char* str)
 {
     char* file;
+    char* temp;
     int   n = 0;        // number of matches found
 
     read_file(fp, &file);
+    cipher(file);
+    temp = file;
 
     file = strtok(file, "\n");          // Split file at newlines
 
@@ -200,11 +201,13 @@ int find(FILE* fp, char* str)
         file = strtok(NULL, "\n");
     }
 
+    free(temp);
+
     return n;
 }
 
 /*! \fn char* rand_ps(void)
- *  \brief Generate a random string of PASS_LEN characters.
+ *  \brief Generate a string of random characters of PASS_LEN length.
  *  \return a character pointer to a static buffer.
  */
 char* rand_ps(void)
