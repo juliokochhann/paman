@@ -4,6 +4,9 @@
 # Ignore all files whose names end with a tilde
 *~
 
+# Ignore paman database files
+.paman_database*
+
 # Ignore all files in these directories
 log/
 tmp/
