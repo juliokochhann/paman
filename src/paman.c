@@ -10,15 +10,22 @@
 #include <time.h>
 #include "paman.h"
 
-/*! \fn void cipher(char* buf)
- *  \brief Encrypt or decrypt a string.
+/*! \fn char cipher(char c)
+ *  \brief Cipher function.
+ *  \param c a character.
+ *  \return void.
+ */
+char cipher(char c) { return c ^= CIPHER_KEY; }
+
+/*! \fn void translate(char* buf)
+ *  \brief Encrypt/decrypt a string.
  *  \param buf a character pointer.
  *  \return void.
  */
-void cipher(char* buf)
+void translate(char* buf)
 {
     while (*buf) {
-        *buf ^= CIPHER_KEY;
+        *buf = cipher(*buf);
         buf++;
     }
 }
@@ -34,7 +41,6 @@ void put_file(FILE* fp, FILE* stream)
     char* file;
 
     read_file(fp, &file);
-    cipher(file);
     fputs(file, stream);
     free(file);
 }
@@ -63,7 +69,7 @@ int read_file(FILE* fp, char** buf)
 
         assert((*buf) != NULL);
 
-        (*buf)[n++] = c;
+        (*buf)[n++] = cipher(c);
         c = fgetc(fp);
     }
 
@@ -104,7 +110,7 @@ void insert(FILE* fp, char* str)
 
     sprintf(cred, "%s %s %s\n", domain, username, password);
     puts(password);
-    cipher(cred);
+    translate(cred);
     fprintf(fp, "%s", cred);
 }
 
@@ -121,7 +127,6 @@ int search(FILE* fp, char* str)
     int   n = 0;        // number of matches found
 
     read_file(fp, &file);
-    cipher(file);
     temp = file;
 
     file = strtok(file, "\n");          // Split file at newlines

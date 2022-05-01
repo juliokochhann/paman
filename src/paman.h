@@ -14,7 +14,9 @@
 #define VERSION         "0.1.0"             /*!< Define paman version */
 #define FILENAME        ".paman_database"   /*!< Define paman database file name */
 
-void  cipher(char* buf);
+char  cipher(char c);
+
+void  translate(char* buf);
 
 void  put_file(FILE* fp, FILE* stream);
 
