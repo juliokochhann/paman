@@ -58,13 +58,13 @@ int main(int argc, char* argv[])
                 print_version();
                 break;
             case ':':
-                fprintf (stderr, "option '-%c' requires an argument.\n", optopt);
                 print_help();
+                fprintf(stderr, "option '-%c' requires an argument.\n", optopt);
                 exit(EXIT_FAILURE);
                 break;
             case '?':
-                fprintf (stderr, "unknown option '-%c'.\n", optopt);
                 print_help();
+                fprintf(stderr, "unknown option '-%c'.\n", optopt);
                 exit(EXIT_FAILURE);
                 break;
         }
@@ -154,8 +154,8 @@ void insert(FILE* fp, char* str)
     char* password = rand_ps();
 
     if (username == NULL) {
-        fprintf(stderr, "error: username not set.\n");
         print_help();
+        fprintf(stderr, "error: username not set.\n");
         exit(EXIT_FAILURE);
     }
 
