@@ -7,14 +7,39 @@
  *  \copyright MIT License
  */
 #include <assert.h>
+#include <dirent.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include "paman.h"
 
 int main(int argc, char* argv[])
 {
-    FILE* fp = fopen(FILENAME, "a+");
+    char config_path[128];
+
+    strcpy(config_path, getenv("HOME"));    
+    strcat(config_path, "/.config/paman/");
+
+    DIR* dr;
+
+    do {
+        dr = opendir(config_path);
+
+        if (dr != NULL)
+            break;
+            
+        if ( mkdir(config_path, S_IRWXU | S_IRWXG | S_IRWXO) == -1 )
+            exit(EXIT_FAILURE);
+    }while (dr == NULL);
+
+    closedir(dr);
+
+    strcat(config_path, DATABASE);
+
+    FILE* fp = fopen(config_path, "a+");
     assert(fp != NULL);
 
     int opt;
@@ -30,17 +55,19 @@ int main(int argc, char* argv[])
                 put_file(cf, cf);
                 break;
             case 'd':           /*! Delete the database file */
-                printf("Do you want to delete " FILENAME "? (Y/n): ");
+                printf("Do you want to delete " DATABASE "? (Y/n): ");
                 if (getchar() == 'Y') {
                     fclose(fp);
-                    assert(!remove(FILENAME));
-                    printf(FILENAME " deleted.\n");
+                    assert(remove(config_path) == 0);
+                    printf(DATABASE " deleted.\n");
                 }
                 break;
             case 'e': ;         /*!< Export the database file to plain text */
-                FILE* of = fopen(FILENAME "_plain.txt", "w");
+                strcat(config_path, "_plain.txt");
+                FILE* of = fopen(config_path, "w");
                 assert(of != NULL);
                 put_file(fp, of);
+                printf("%s\n", config_path);
                 break;
             case 'h':
                 print_help();
@@ -49,7 +76,8 @@ int main(int argc, char* argv[])
                 put_file(fp, stdout);
                 break;
             case 's':           /*! Search for credentials that contain \a optarg */
-                search(fp, optarg);
+                if (search(fp, optarg) == 0)
+                    printf("%s not found.\n", optarg);
                 break;
             case 'v':
                 print_version();
