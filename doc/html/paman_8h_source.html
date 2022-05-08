@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Paman<span id="projectnumber">&#160;0.1.0</span>
+   <div id="projectname">Paman<span id="projectnumber">&#160;0.1.2</span>
    </div>
   </td>
  </tr>
@@ -69,33 +69,52 @@ $(function() {
   <div class="headertitle"><div class="title">paman.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="paman_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PAMAN_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PAMAN_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="paman_8h.html#a80dd7da88d27764a3869de83b4d1bda9">    7</a></span><span class="preprocessor">#define ASCII_MAX       128</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="paman_8h.html#a9bf8990dbf41cdf4d1303eeaa68fce9e">    8</a></span><span class="preprocessor">#define CIPHER_KEY      ASCII_MAX+42        </span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="paman_8h.html#a2aa40711aa8ed864335a50e7e031a8b6">    9</a></span><span class="preprocessor">#define PASS_LEN        16                  </span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="paman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">   10</a></span><span class="preprocessor">#define VERSION         &quot;0.1.0&quot;</span>             </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="paman_8h.html#a8de29f7c8bbf1a81cc6e71ac602032d3">   11</a></span><span class="preprocessor">#define FILENAME        &quot;.paman_database&quot;</span>   </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">char</span>* <a class="code hl_function" href="paman_8h.html#af63133e6d13b6b973669bc09f5a22ca8">cipher</a>(<span class="keywordtype">char</span>* buf);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span>  <a class="code hl_function" href="paman_8h.html#a02e2f68d342406147762a5e67f66142a">put_file</a>(FILE* fp, FILE* stream);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">int</span>   <a class="code hl_function" href="paman_8h.html#ae4c4e04fa6c43eb74cd921785e4d0c61">read_file</a>(FILE* fp, <span class="keywordtype">char</span>** buf);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span>  <a class="code hl_function" href="paman_8h.html#ab5b688d42e6c50e4f9c171d7366b6ed5">insert</a>(FILE* fp, <span class="keywordtype">char</span>* str);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">int</span>   <a class="code hl_function" href="paman_8h.html#a928f6fcdf74acf90f1b9e3c0b6ad6dff">find</a>(FILE* fp, <span class="keywordtype">char</span>* str);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">char</span>* <a class="code hl_function" href="paman_8h.html#a05034b4f31bb78720e706585c9dcccf1">rand_ps</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="paman_8h.html#a2dc54e87b3acc735406929a241e27e64">   23</a></span><span class="preprocessor">#define print_version()     puts(&quot;paman version &quot;</span>VERSION)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define print_help()        puts(&quot;usage: paman [-a &lt;site&gt;:&lt;username&gt;]\n \</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">            [-c &lt;filename&gt;]\n \</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">            [-q &lt;search-query&gt;]\n \</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">            [-e] [-h] [-l] [-r] [-v]&quot;</span>)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="apaman_8h_html_a02e2f68d342406147762a5e67f66142a"><div class="ttname"><a href="paman_8h.html#a02e2f68d342406147762a5e67f66142a">put_file</a></div><div class="ttdeci">void put_file(FILE *fp, FILE *stream)</div><div class="ttdoc">Encrypt/decrypt a file and write it to a stream.</div><div class="ttdef"><b>Definition:</b> paman.c:101</div></div>
-<div class="ttc" id="apaman_8h_html_a05034b4f31bb78720e706585c9dcccf1"><div class="ttname"><a href="paman_8h.html#a05034b4f31bb78720e706585c9dcccf1">rand_ps</a></div><div class="ttdeci">char * rand_ps(void)</div><div class="ttdoc">Generate a random string of PASS_LEN characters.</div><div class="ttdef"><b>Definition:</b> paman.c:210</div></div>
-<div class="ttc" id="apaman_8h_html_a928f6fcdf74acf90f1b9e3c0b6ad6dff"><div class="ttname"><a href="paman_8h.html#a928f6fcdf74acf90f1b9e3c0b6ad6dff">find</a></div><div class="ttdeci">int find(FILE *fp, char *str)</div><div class="ttdoc">Find credentials that contain the string.</div><div class="ttdef"><b>Definition:</b> paman.c:185</div></div>
-<div class="ttc" id="apaman_8h_html_ab5b688d42e6c50e4f9c171d7366b6ed5"><div class="ttname"><a href="paman_8h.html#ab5b688d42e6c50e4f9c171d7366b6ed5">insert</a></div><div class="ttdeci">void insert(FILE *fp, char *str)</div><div class="ttdoc">Insert a credential into the database.</div><div class="ttdef"><b>Definition:</b> paman.c:154</div></div>
-<div class="ttc" id="apaman_8h_html_ae4c4e04fa6c43eb74cd921785e4d0c61"><div class="ttname"><a href="paman_8h.html#ae4c4e04fa6c43eb74cd921785e4d0c61">read_file</a></div><div class="ttdeci">int read_file(FILE *fp, char **buf)</div><div class="ttdoc">Read a file into a buffer.</div><div class="ttdef"><b>Definition:</b> paman.c:118</div></div>
-<div class="ttc" id="apaman_8h_html_af63133e6d13b6b973669bc09f5a22ca8"><div class="ttname"><a href="paman_8h.html#af63133e6d13b6b973669bc09f5a22ca8">cipher</a></div><div class="ttdeci">char * cipher(char *buf)</div><div class="ttdoc">Encrypt or decrypt a string.</div><div class="ttdef"><b>Definition:</b> paman.c:83</div></div>
+<a href="paman_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef PAMAN_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define PAMAN_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="paman_8h.html#a80dd7da88d27764a3869de83b4d1bda9">   11</a></span><span class="preprocessor">#define ASCII_MAX       128</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="paman_8h.html#a9bf8990dbf41cdf4d1303eeaa68fce9e">   12</a></span><span class="preprocessor">#define CIPHER_KEY      ASCII_MAX+42        </span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="paman_8h.html#a2aa40711aa8ed864335a50e7e031a8b6">   13</a></span><span class="preprocessor">#define PASS_LEN        16                  </span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="paman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">   14</a></span><span class="preprocessor">#define VERSION         &quot;0.1.2&quot;</span>             </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="paman_8h.html#a39dc88d73783e112dbfcf98adbdbefa6">   15</a></span><span class="preprocessor">#define DATABASE        &quot;.paman_database&quot;</span>   </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">char</span>  <a class="code hl_function" href="paman_8h.html#a73b859bd618bf5dca63b900ef185c711">cipher</a>(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span>  <a class="code hl_function" href="paman_8h.html#a77d861e9bf22c903aef40007d4f85ba6">translate</a>(<span class="keywordtype">char</span>* buf);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span>  <a class="code hl_function" href="paman_8h.html#a02e2f68d342406147762a5e67f66142a">put_file</a>(FILE* fp, FILE* stream);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">int</span>   <a class="code hl_function" href="paman_8h.html#ae4c4e04fa6c43eb74cd921785e4d0c61">read_file</a>(FILE* fp, <span class="keywordtype">char</span>** buf);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span>  <a class="code hl_function" href="paman_8h.html#ab5b688d42e6c50e4f9c171d7366b6ed5">insert</a>(FILE* fp, <span class="keywordtype">char</span>* str);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">int</span>   <a class="code hl_function" href="paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd">search</a>(FILE* fp, <span class="keywordtype">char</span>* str);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">char</span>* <a class="code hl_function" href="paman_8h.html#a05034b4f31bb78720e706585c9dcccf1">rand_ps</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="paman_8h.html#a2dc54e87b3acc735406929a241e27e64">   34</a></span><span class="preprocessor">#define print_version()     puts(&quot;paman version &quot;</span>VERSION)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define print_help()        puts(&quot;usage: paman [-a &lt;domain&gt;:&lt;username&gt;]\n \</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">            [-c &lt;filename&gt;]\n \</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">            [-s &lt;search-query&gt;]\n \</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">            [-d] [-e] [-h] [-l] [-v]\n \</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">\n \</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">-a: Insert credential in the form of &lt;domain&gt;:&lt;username&gt;\n \</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">-c: Convert a file &lt;filename&gt; to cipher/text\n \</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">-d: Delete the database file\n \</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">-e: Export the database file to plain text\n \</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">-h: Print this help\n \</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">-l: List all credentials\n \</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">-s: Search for credentials that contain &lt;search-query&gt;\n \</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">-v: Print program version&quot;</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="apaman_8h_html_a02e2f68d342406147762a5e67f66142a"><div class="ttname"><a href="paman_8h.html#a02e2f68d342406147762a5e67f66142a">put_file</a></div><div class="ttdeci">void put_file(FILE *fp, FILE *stream)</div><div class="ttdoc">Encrypt/decrypt a file and write it to a stream.</div><div class="ttdef"><b>Definition:</b> paman.c:39</div></div>
+<div class="ttc" id="apaman_8h_html_a05034b4f31bb78720e706585c9dcccf1"><div class="ttname"><a href="paman_8h.html#a05034b4f31bb78720e706585c9dcccf1">rand_ps</a></div><div class="ttdeci">char * rand_ps(void)</div><div class="ttdoc">Generate a string of random characters of PASS_LEN length.</div><div class="ttdef"><b>Definition:</b> paman.c:152</div></div>
+<div class="ttc" id="apaman_8h_html_a73b859bd618bf5dca63b900ef185c711"><div class="ttname"><a href="paman_8h.html#a73b859bd618bf5dca63b900ef185c711">cipher</a></div><div class="ttdeci">char cipher(char c)</div><div class="ttdoc">Cipher function.</div><div class="ttdef"><b>Definition:</b> paman.c:18</div></div>
+<div class="ttc" id="apaman_8h_html_a77d861e9bf22c903aef40007d4f85ba6"><div class="ttname"><a href="paman_8h.html#a77d861e9bf22c903aef40007d4f85ba6">translate</a></div><div class="ttdeci">void translate(char *buf)</div><div class="ttdoc">Encrypt/decrypt a string.</div><div class="ttdef"><b>Definition:</b> paman.c:25</div></div>
+<div class="ttc" id="apaman_8h_html_aac4c74e09a24efce1e79f4cf57714edd"><div class="ttname"><a href="paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd">search</a></div><div class="ttdeci">int search(FILE *fp, char *str)</div><div class="ttdoc">Find credentials that contain the string.</div><div class="ttdef"><b>Definition:</b> paman.c:123</div></div>
+<div class="ttc" id="apaman_8h_html_ab5b688d42e6c50e4f9c171d7366b6ed5"><div class="ttname"><a href="paman_8h.html#ab5b688d42e6c50e4f9c171d7366b6ed5">insert</a></div><div class="ttdeci">void insert(FILE *fp, char *str)</div><div class="ttdoc">Insert a credential into the database.</div><div class="ttdef"><b>Definition:</b> paman.c:90</div></div>
+<div class="ttc" id="apaman_8h_html_ae4c4e04fa6c43eb74cd921785e4d0c61"><div class="ttname"><a href="paman_8h.html#ae4c4e04fa6c43eb74cd921785e4d0c61">read_file</a></div><div class="ttdeci">int read_file(FILE *fp, char **buf)</div><div class="ttdoc">Read a file into a buffer.</div><div class="ttdef"><b>Definition:</b> paman.c:54</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

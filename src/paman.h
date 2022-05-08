@@ -11,7 +11,7 @@
 #define ASCII_MAX       128
 #define CIPHER_KEY      ASCII_MAX+42        /*!< Define cipher key */
 #define PASS_LEN        16                  /*!< Define Max. password length */
-#define VERSION         "0.1.1"             /*!< Define paman version */
+#define VERSION         "0.1.2"             /*!< Define paman version */
 #define DATABASE        ".paman_database"   /*!< Define paman database file name */
 
 char  cipher(char c);

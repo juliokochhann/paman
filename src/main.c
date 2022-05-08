@@ -2,7 +2,7 @@
  *  \brief     Password manager
  *  \details   Paman is a CLI tool to manage your passwords.
  *  \author    Julio Cesar Kochhann
- *  \version   0.1.0
+ *  \version   0.1.2
  *  \date      Apr 2022
  *  \copyright MIT License
  */

@@ -1,0 +1,9 @@
+Package: paman
+Version: 0.1.2
+Section: custom
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 18624
+Maintainer: github.com/kcjulio
+Description: Paman is a CLI tool to easily manage your passwords

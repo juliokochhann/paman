@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../paman_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'paman.c']]]
+  ['put_5ffile_0',['put_file',['../paman_8c.html#a02e2f68d342406147762a5e67f66142a',1,'put_file(FILE *fp, FILE *stream):&#160;paman.c'],['../paman_8h.html#a02e2f68d342406147762a5e67f66142a',1,'put_file(FILE *fp, FILE *stream):&#160;paman.c']]]
 ];

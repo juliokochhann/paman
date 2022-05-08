@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rand_5fps_0',['rand_ps',['../paman_8c.html#a05034b4f31bb78720e706585c9dcccf1',1,'rand_ps(void):&#160;paman.c'],['../paman_8h.html#a05034b4f31bb78720e706585c9dcccf1',1,'rand_ps(void):&#160;paman.c']]],
-  ['read_5ffile_1',['read_file',['../paman_8c.html#ae4c4e04fa6c43eb74cd921785e4d0c61',1,'read_file(FILE *fp, char **buf):&#160;paman.c'],['../paman_8h.html#ae4c4e04fa6c43eb74cd921785e4d0c61',1,'read_file(FILE *fp, char **buf):&#160;paman.c']]]
+  ['search_0',['search',['../paman_8c.html#aac4c74e09a24efce1e79f4cf57714edd',1,'search(FILE *fp, char *str):&#160;paman.c'],['../paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd',1,'search(FILE *fp, char *str):&#160;paman.c']]]
 ];
