@@ -5,7 +5,7 @@
 *~
 
 # Ignore paman database files
-.paman_database*
+*paman_database*
 
 # Ignore all files in these directories
 log/

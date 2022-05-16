@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Paman<span id="projectnumber">&#160;0.1.2</span>
+   <div id="projectname">Paman<span id="projectnumber">&#160;1.0.0-beta</span>
    </div>
+   <div id="projectbrief">Paman is a CLI tool to manage your passwords</div>
   </td>
  </tr>
  </tbody>
@@ -83,37 +84,43 @@ Macros</h2></td></tr>
 <tr class="separator:a9bf8990dbf41cdf4d1303eeaa68fce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2aa40711aa8ed864335a50e7e031a8b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a2aa40711aa8ed864335a50e7e031a8b6">PASS_LEN</a>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:a2aa40711aa8ed864335a50e7e031a8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c6d5de492ac61ad29aec7aa9a436bbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">VERSION</a>&#160;&#160;&#160;&quot;0.1.2&quot;</td></tr>
+<tr class="memitem:a1c6d5de492ac61ad29aec7aa9a436bbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">VERSION</a>&#160;&#160;&#160;&quot;1.0.0-beta&quot;</td></tr>
 <tr class="separator:a1c6d5de492ac61ad29aec7aa9a436bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39dc88d73783e112dbfcf98adbdbefa6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a39dc88d73783e112dbfcf98adbdbefa6">DATABASE</a>&#160;&#160;&#160;&quot;.paman_database&quot;</td></tr>
-<tr class="separator:a39dc88d73783e112dbfcf98adbdbefa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d3783c8ec84a6a4634ca001b5da9432"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a2d3783c8ec84a6a4634ca001b5da9432">CFG_DIR</a>&#160;&#160;&#160;&quot;/.config/paman/&quot;</td></tr>
+<tr class="separator:a2d3783c8ec84a6a4634ca001b5da9432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee925031172607ff8d5cf8b68374bd7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#aee925031172607ff8d5cf8b68374bd7f">DB_FILE</a>&#160;&#160;&#160;&quot;.paman_database&quot;</td></tr>
+<tr class="separator:aee925031172607ff8d5cf8b68374bd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806511f4930171733227c99101dc0606"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a806511f4930171733227c99101dc0606">NEWLINE</a>&#160;&#160;&#160;&quot;\n&quot;</td></tr>
+<tr class="separator:a806511f4930171733227c99101dc0606"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dc54e87b3acc735406929a241e27e64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a2dc54e87b3acc735406929a241e27e64">print_version</a>()&#160;&#160;&#160;puts(&quot;paman version &quot;VERSION)</td></tr>
 <tr class="separator:a2dc54e87b3acc735406929a241e27e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43dfaa4db0e2c2ae888c061cdadcd1e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a43dfaa4db0e2c2ae888c061cdadcd1e0">print_help</a>()&#160;&#160;&#160;puts(&quot;usage: paman [-a &lt;domain&gt;:&lt;username&gt;]\n \            [-c &lt;filename&gt;]\n \            [-s &lt;<a class="el" href="paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd">search</a>-query&gt;]\n \            [-d] [-e] [-h] [-l] [-v]\n \\n \-a: Insert credential in the form of &lt;domain&gt;:&lt;username&gt;\n \-c: Convert a file &lt;filename&gt; to <a class="el" href="paman_8h.html#a73b859bd618bf5dca63b900ef185c711">cipher</a>/text\n \-d: Delete the database file\n \-e: Export the database file to plain text\n \-h: Print this help\n \-l: List all credentials\n \-s: Search for credentials that contain &lt;<a class="el" href="paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd">search</a>-query&gt;\n \-v: Print program version&quot;)</td></tr>
+<tr class="memitem:a43dfaa4db0e2c2ae888c061cdadcd1e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a43dfaa4db0e2c2ae888c061cdadcd1e0">print_help</a>()&#160;&#160;&#160;puts(&quot;usage: paman [-a &lt;name&gt;:&lt;username&gt;]\n \            [-s &lt;search-query&gt;]\n \            [-d] [-e] [-h] [-l] [-v]\n \\n \-a: Insert credential in the form of &lt;name&gt;:&lt;username&gt;\n \-d: Delete the database file\n \-e: Export the database file to plain text\n \-h: Print this help\n \-l: List all credentials\n \-s: Search for credentials that contain &lt;search-query&gt;\n \-v: Print program version&quot;)</td></tr>
 <tr class="separator:a43dfaa4db0e2c2ae888c061cdadcd1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005db620f742aae134db8c5f9ced8686"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a005db620f742aae134db8c5f9ced8686">exit_error</a>(...)&#160;&#160;&#160;{<a class="el" href="paman_8h.html#a43dfaa4db0e2c2ae888c061cdadcd1e0">print_help</a>(); fprintf(stderr, __VA_ARGS__); exit(EXIT_FAILURE);}</td></tr>
+<tr class="separator:a005db620f742aae134db8c5f9ced8686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a73b859bd618bf5dca63b900ef185c711"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a73b859bd618bf5dca63b900ef185c711">cipher</a> (char c)</td></tr>
-<tr class="memdesc:a73b859bd618bf5dca63b900ef185c711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cipher function.  <a href="paman_8h.html#a73b859bd618bf5dca63b900ef185c711">More...</a><br /></td></tr>
+<tr class="memdesc:a73b859bd618bf5dca63b900ef185c711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt/Decrypt a character.  <a href="paman_8h.html#a73b859bd618bf5dca63b900ef185c711">More...</a><br /></td></tr>
 <tr class="separator:a73b859bd618bf5dca63b900ef185c711"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d861e9bf22c903aef40007d4f85ba6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a77d861e9bf22c903aef40007d4f85ba6">translate</a> (char *buf)</td></tr>
-<tr class="memdesc:a77d861e9bf22c903aef40007d4f85ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt/decrypt a string.  <a href="paman_8h.html#a77d861e9bf22c903aef40007d4f85ba6">More...</a><br /></td></tr>
-<tr class="separator:a77d861e9bf22c903aef40007d4f85ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02e2f68d342406147762a5e67f66142a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a02e2f68d342406147762a5e67f66142a">put_file</a> (FILE *fp, FILE *stream)</td></tr>
-<tr class="memdesc:a02e2f68d342406147762a5e67f66142a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt/decrypt a file and write it to a stream.  <a href="paman_8h.html#a02e2f68d342406147762a5e67f66142a">More...</a><br /></td></tr>
-<tr class="separator:a02e2f68d342406147762a5e67f66142a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4c4e04fa6c43eb74cd921785e4d0c61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#ae4c4e04fa6c43eb74cd921785e4d0c61">read_file</a> (FILE *fp, char **buf)</td></tr>
-<tr class="memdesc:ae4c4e04fa6c43eb74cd921785e4d0c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a file into a buffer.  <a href="paman_8h.html#ae4c4e04fa6c43eb74cd921785e4d0c61">More...</a><br /></td></tr>
-<tr class="separator:ae4c4e04fa6c43eb74cd921785e4d0c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5b688d42e6c50e4f9c171d7366b6ed5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#ab5b688d42e6c50e4f9c171d7366b6ed5">insert</a> (FILE *fp, char *str)</td></tr>
-<tr class="memdesc:ab5b688d42e6c50e4f9c171d7366b6ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a credential into the database.  <a href="paman_8h.html#ab5b688d42e6c50e4f9c171d7366b6ed5">More...</a><br /></td></tr>
-<tr class="separator:ab5b688d42e6c50e4f9c171d7366b6ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac4c74e09a24efce1e79f4cf57714edd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd">search</a> (FILE *fp, char *str)</td></tr>
-<tr class="memdesc:aac4c74e09a24efce1e79f4cf57714edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find credentials that contain the string.  <a href="paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd">More...</a><br /></td></tr>
-<tr class="separator:aac4c74e09a24efce1e79f4cf57714edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78d13bd5c6d621ea4c806556ac09559a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a78d13bd5c6d621ea4c806556ac09559a">cipher_string</a> (char *str)</td></tr>
+<tr class="memdesc:a78d13bd5c6d621ea4c806556ac09559a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt/Decrypt a string with <em>CIPHER_KEY</em>.  <a href="paman_8h.html#a78d13bd5c6d621ea4c806556ac09559a">More...</a><br /></td></tr>
+<tr class="separator:a78d13bd5c6d621ea4c806556ac09559a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2de4cf6eaa5f6ca013abae367c07386"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#af2de4cf6eaa5f6ca013abae367c07386">insert_credential</a> (FILE *fp, char *str)</td></tr>
+<tr class="memdesc:af2de4cf6eaa5f6ca013abae367c07386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert credential at the end of database (append).  <a href="paman_8h.html#af2de4cf6eaa5f6ca013abae367c07386">More...</a><br /></td></tr>
+<tr class="separator:af2de4cf6eaa5f6ca013abae367c07386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82bf98399862c7edc7803ab986d88ba6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a82bf98399862c7edc7803ab986d88ba6">list_credentials</a> (FILE *fp, int export)</td></tr>
+<tr class="memdesc:a82bf98399862c7edc7803ab986d88ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print all credentials in the database to either stdout (export=false) or paman_database.txt (export=true).  <a href="paman_8h.html#a82bf98399862c7edc7803ab986d88ba6">More...</a><br /></td></tr>
+<tr class="separator:a82bf98399862c7edc7803ab986d88ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48436aaa759ae2a67687b6fc1544443f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a48436aaa759ae2a67687b6fc1544443f">read_database</a> (FILE *fp, char **buf)</td></tr>
+<tr class="memdesc:a48436aaa759ae2a67687b6fc1544443f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read database into buf.  <a href="paman_8h.html#a48436aaa759ae2a67687b6fc1544443f">More...</a><br /></td></tr>
+<tr class="separator:a48436aaa759ae2a67687b6fc1544443f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4abe9a0249b794f550e6da240f5d355"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#ac4abe9a0249b794f550e6da240f5d355">search_credential</a> (FILE *fp, char *str)</td></tr>
+<tr class="memdesc:ac4abe9a0249b794f550e6da240f5d355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for credentials in the database that contain <em>str</em>.  <a href="paman_8h.html#ac4abe9a0249b794f550e6da240f5d355">More...</a><br /></td></tr>
+<tr class="separator:ac4abe9a0249b794f550e6da240f5d355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05034b4f31bb78720e706585c9dcccf1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="paman_8h.html#a05034b4f31bb78720e706585c9dcccf1">rand_ps</a> (void)</td></tr>
-<tr class="memdesc:a05034b4f31bb78720e706585c9dcccf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a string of random characters of PASS_LEN length.  <a href="paman_8h.html#a05034b4f31bb78720e706585c9dcccf1">More...</a><br /></td></tr>
+<tr class="memdesc:a05034b4f31bb78720e706585c9dcccf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a string of &lt;PASS_LEN&gt; random characters.  <a href="paman_8h.html#a05034b4f31bb78720e706585c9dcccf1">More...</a><br /></td></tr>
 <tr class="separator:a05034b4f31bb78720e706585c9dcccf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -134,6 +141,21 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2d3783c8ec84a6a4634ca001b5da9432" name="a2d3783c8ec84a6a4634ca001b5da9432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d3783c8ec84a6a4634ca001b5da9432">&#9670;&nbsp;</a></span>CFG_DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CFG_DIR&#160;&#160;&#160;&quot;/.config/paman/&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Define config. directory </p>
+
+</div>
+</div>
 <a id="a9bf8990dbf41cdf4d1303eeaa68fce9e" name="a9bf8990dbf41cdf4d1303eeaa68fce9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9bf8990dbf41cdf4d1303eeaa68fce9e">&#9670;&nbsp;</a></span>CIPHER_KEY</h2>
 
@@ -149,18 +171,52 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a39dc88d73783e112dbfcf98adbdbefa6" name="a39dc88d73783e112dbfcf98adbdbefa6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39dc88d73783e112dbfcf98adbdbefa6">&#9670;&nbsp;</a></span>DATABASE</h2>
+<a id="aee925031172607ff8d5cf8b68374bd7f" name="aee925031172607ff8d5cf8b68374bd7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee925031172607ff8d5cf8b68374bd7f">&#9670;&nbsp;</a></span>DB_FILE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DATABASE&#160;&#160;&#160;&quot;.paman_database&quot;</td>
+          <td class="memname">#define DB_FILE&#160;&#160;&#160;&quot;.paman_database&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Define paman database file name </p>
+<p >Define database filename </p>
+
+</div>
+</div>
+<a id="a005db620f742aae134db8c5f9ced8686" name="a005db620f742aae134db8c5f9ced8686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005db620f742aae134db8c5f9ced8686">&#9670;&nbsp;</a></span>exit_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define exit_error</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="paman_8h.html#a43dfaa4db0e2c2ae888c061cdadcd1e0">print_help</a>(); fprintf(stderr, __VA_ARGS__); exit(EXIT_FAILURE);}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Prints error message on stderr and exits </p>
+
+</div>
+</div>
+<a id="a806511f4930171733227c99101dc0606" name="a806511f4930171733227c99101dc0606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806511f4930171733227c99101dc0606">&#9670;&nbsp;</a></span>NEWLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NEWLINE&#160;&#160;&#160;&quot;\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Define newline escape sequence </p>
 
 </div>
 </div>
@@ -189,7 +245,7 @@ Functions</h2></td></tr>
           <td class="memname">#define print_help</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;puts(&quot;usage: paman [-a &lt;domain&gt;:&lt;username&gt;]\n \            [-c &lt;filename&gt;]\n \            [-s &lt;<a class="el" href="paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd">search</a>-query&gt;]\n \            [-d] [-e] [-h] [-l] [-v]\n \\n \-a: Insert credential in the form of &lt;domain&gt;:&lt;username&gt;\n \-c: Convert a file &lt;filename&gt; to <a class="el" href="paman_8h.html#a73b859bd618bf5dca63b900ef185c711">cipher</a>/text\n \-d: Delete the database file\n \-e: Export the database file to plain text\n \-h: Print this help\n \-l: List all credentials\n \-s: Search for credentials that contain &lt;<a class="el" href="paman_8h.html#aac4c74e09a24efce1e79f4cf57714edd">search</a>-query&gt;\n \-v: Print program version&quot;)</td>
+          <td>&#160;&#160;&#160;puts(&quot;usage: paman [-a &lt;name&gt;:&lt;username&gt;]\n \            [-s &lt;search-query&gt;]\n \            [-d] [-e] [-h] [-l] [-v]\n \\n \-a: Insert credential in the form of &lt;name&gt;:&lt;username&gt;\n \-d: Delete the database file\n \-e: Export the database file to plain text\n \-h: Print this help\n \-l: List all credentials\n \-s: Search for credentials that contain &lt;search-query&gt;\n \-v: Print program version&quot;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -222,7 +278,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define VERSION&#160;&#160;&#160;&quot;0.1.2&quot;</td>
+          <td class="memname">#define VERSION&#160;&#160;&#160;&quot;1.0.0-beta&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -247,7 +303,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cipher function. </p>
+<p>Encrypt/Decrypt a character. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>a character. </td></tr>
@@ -258,14 +314,41 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab5b688d42e6c50e4f9c171d7366b6ed5" name="ab5b688d42e6c50e4f9c171d7366b6ed5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5b688d42e6c50e4f9c171d7366b6ed5">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="a78d13bd5c6d621ea4c806556ac09559a" name="a78d13bd5c6d621ea4c806556ac09559a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78d13bd5c6d621ea4c806556ac09559a">&#9670;&nbsp;</a></span>cipher_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void insert </td>
+          <td class="memname">char * cipher_string </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encrypt/Decrypt a string with <em>CIPHER_KEY</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>a string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a character pointer. </dd></dl>
+
+</div>
+</div>
+<a id="af2de4cf6eaa5f6ca013abae367c07386" name="af2de4cf6eaa5f6ca013abae367c07386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2de4cf6eaa5f6ca013abae367c07386">&#9670;&nbsp;</a></span>insert_credential()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void insert_credential </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>fp</em>, </td>
@@ -284,17 +367,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Insert a credential into the database. </p>
+<p>Insert credential at the end of database (append). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fp</td><td>a FILE pointer. </td></tr>
-    <tr><td class="paramname">str</td><td>a character pointer. </td></tr>
+    <tr><td class="paramname">str</td><td>a string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">credential</td><td>must be unique. </td></tr>
+    <tr><td class="paramname">null</td><td>usernam. </td></tr>
+    <tr><td class="paramname">credential</td><td>not unique. </td></tr>
   </table>
   </dd>
 </dl>
@@ -302,14 +386,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a02e2f68d342406147762a5e67f66142a" name="a02e2f68d342406147762a5e67f66142a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02e2f68d342406147762a5e67f66142a">&#9670;&nbsp;</a></span>put_file()</h2>
+<a id="a82bf98399862c7edc7803ab986d88ba6" name="a82bf98399862c7edc7803ab986d88ba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82bf98399862c7edc7803ab986d88ba6">&#9670;&nbsp;</a></span>list_credentials()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void put_file </td>
+          <td class="memname">void list_credentials </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>fp</em>, </td>
@@ -317,8 +401,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">FILE *&#160;</td>
-          <td class="paramname"><em>stream</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>export</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -328,11 +412,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Encrypt/decrypt a file and write it to a stream. </p>
+<p>Print all credentials in the database to either stdout (export=false) or paman_database.txt (export=true). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fp</td><td>a FILE pointer. </td></tr>
-    <tr><td class="paramname">stream</td><td>a FILE pointer. </td></tr>
+    <tr><td class="paramname">export</td><td>an int. </td></tr>
   </table>
   </dd>
 </dl>
@@ -356,19 +440,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generate a string of random characters of PASS_LEN length. </p>
-<dl class="section return"><dt>Returns</dt><dd>a character pointer to a static buffer. </dd></dl>
+<p>Generate a string of &lt;PASS_LEN&gt; random characters. </p>
+<dl class="section return"><dt>Returns</dt><dd>a character pointer. </dd></dl>
 
 </div>
 </div>
-<a id="ae4c4e04fa6c43eb74cd921785e4d0c61" name="ae4c4e04fa6c43eb74cd921785e4d0c61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4c4e04fa6c43eb74cd921785e4d0c61">&#9670;&nbsp;</a></span>read_file()</h2>
+<a id="a48436aaa759ae2a67687b6fc1544443f" name="a48436aaa759ae2a67687b6fc1544443f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48436aaa759ae2a67687b6fc1544443f">&#9670;&nbsp;</a></span>read_database()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int read_file </td>
+          <td class="memname">int read_database </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>fp</em>, </td>
@@ -387,7 +471,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read a file into a buffer. </p>
+<p>Read database into buf. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fp</td><td>a FILE pointer. </td></tr>
@@ -399,14 +483,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aac4c74e09a24efce1e79f4cf57714edd" name="aac4c74e09a24efce1e79f4cf57714edd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac4c74e09a24efce1e79f4cf57714edd">&#9670;&nbsp;</a></span>search()</h2>
+<a id="ac4abe9a0249b794f550e6da240f5d355" name="ac4abe9a0249b794f550e6da240f5d355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4abe9a0249b794f550e6da240f5d355">&#9670;&nbsp;</a></span>search_credential()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int search </td>
+          <td class="memname">int search_credential </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>fp</em>, </td>
@@ -425,42 +509,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Find credentials that contain the string. </p>
+<p>Search for credentials in the database that contain <em>str</em>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fp</td><td>a FILE pointer. </td></tr>
-    <tr><td class="paramname">str</td><td>a character pointer. </td></tr>
+    <tr><td class="paramname">str</td><td>a string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>an integer. </dd></dl>
-
-</div>
-</div>
-<a id="a77d861e9bf22c903aef40007d4f85ba6" name="a77d861e9bf22c903aef40007d4f85ba6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77d861e9bf22c903aef40007d4f85ba6">&#9670;&nbsp;</a></span>translate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void translate </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>buf</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Encrypt/decrypt a string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buf</td><td>a character pointer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
 
 </div>
 </div>

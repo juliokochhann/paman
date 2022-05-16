@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.c']]],
-  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]]
+  ['insert_5fcredential_0',['insert_credential',['../paman_8c.html#af2de4cf6eaa5f6ca013abae367c07386',1,'insert_credential(FILE *fp, char *str):&#160;paman.c'],['../paman_8h.html#af2de4cf6eaa5f6ca013abae367c07386',1,'insert_credential(FILE *fp, char *str):&#160;paman.c']]]
 ];
