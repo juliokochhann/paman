@@ -11,47 +11,82 @@
 #include "paman.h"
 
 /*! \fn char cipher(char c)
- *  \brief Cipher function.
+ *  \brief Encrypt/Decrypt a character.
  *  \param c a character.
  *  \return void.
  */
 char cipher(char c) { return c ^= CIPHER_KEY; }
 
-/*! \fn void translate(char* buf)
- *  \brief Encrypt/decrypt a string.
- *  \param buf a character pointer.
- *  \return void.
+/*! \fn void cipher_string(char* str)
+ *  \brief Encrypt/Decrypt a string with \a CIPHER_KEY.
+ *  \param str a string.
+ *  \return a character pointer.
  */
-void translate(char* buf)
+char* cipher_string(char* str)
 {
-    while (*buf) {
-        *buf = cipher(*buf);
-        buf++;
-    }
+    for (int i = 0; i < strlen(str); i++)
+        str[i] = cipher( str[i] );
+
+    return str;
 }
 
-/*! \fn void put_file(FILE* fp, FILE* stream) 
- *  \brief Encrypt/decrypt a file and write it to a stream.
+/*! \fn void insert_credential(FILE* fp, char* str)
+ *  \brief Insert credential at the end of database (append).
  *  \param fp a FILE pointer.
- *  \param stream a FILE pointer.
+ *  \param str a string.
+ *  \exception null usernam.
+ *  \exception credential not unique.
  *  \return void.
  */
-void put_file(FILE* fp, FILE* stream)
+void insert_credential(FILE* fp, char* str)
 {
-    char* file;
+    char* name      = strtok( str, ":" );
+    char* user_name = strtok(NULL, ":" );
 
-    read_file(fp, &file);
-    fputs(file, stream);
-    free(file);
+    if (user_name == NULL)
+        exit_error("error: null username." NEWLINE)
+
+    size_t len = strlen(name) + strlen(user_name);
+    char*  id  = (char *) malloc(len + PASS_LEN + 4);
+
+    sprintf(id, "%s %s", name, user_name);
+
+    if ( search_credential(fp, id) )
+        exit_error("error: credential not unique." NEWLINE)
+
+    char* ps = rand_ps();
+
+    sprintf(id, "%s %s %s" NEWLINE, name, user_name, ps);
+    cipher_string(id);
+    fprintf(fp, "%s", id);
 }
 
-/*! \fn int read_file(FILE* fp, char** buf)
- *  \brief Read a file into a buffer.
+/*! \fn void list_credentials(FILE* fp, int export)
+ *  \brief Print all credentials in the database to either stdout (export=false) or paman_database.txt (export=true).
+ *  \param fp a FILE pointer.
+ *  \param export an int.
+ *  \return void.
+ */
+void list_credentials(FILE* fp, int export)
+{
+    char* file_str;
+
+    read_database(fp, &file_str);
+
+    FILE* of = export ? fopen("paman_database.txt", "a+") : stdout;
+    assert(of != NULL);
+    
+    fputs(file_str, of);
+    free(file_str);
+}
+
+/*! \fn int read_database(FILE* fp, char** buf)
+ *  \brief Read database into buf.
  *  \param fp a FILE pointer.
  *  \param buf a pointer to a character pointer.
  *  \return an integer.
  */
-int read_file(FILE* fp, char** buf)
+int read_database(FILE* fp, char** buf)
 {
     char c;
     int  n = 0;             // number of characters read
@@ -63,13 +98,13 @@ int read_file(FILE* fp, char** buf)
 
     c = fgetc(fp);
 
-    while (!feof(fp)) {
+    while ( !feof(fp) ) {
         if (n == buf_sz)
             (*buf) = (char *) realloc((*buf), (buf_sz *= 2) * sizeof(char));
 
         assert((*buf) != NULL);
 
-        (*buf)[n++] = cipher(c);
+        (*buf)[n++] = cipher(c);    // Decrypt character
         c = fgetc(fp);
     }
 
@@ -80,64 +115,30 @@ int read_file(FILE* fp, char** buf)
     return n;
 }
 
-/*! \fn void insert(FILE* fp, char* str)
- *  \brief Insert a credential into the database.
+/*! \fn int search_credential(FILE* fp, char* str)
+ *  \brief Search for credentials in the database that contain \a str
  *  \param fp a FILE pointer.
- *  \param str a character pointer.
- *  \exception credential must be unique.
- *  \return void.
- */
-void insert(FILE* fp, char* str)
-{
-    char* domain   = strtok( str, ":" );
-    char* username = strtok(NULL, "\0");
-    char* password = rand_ps();
-
-    if (username == NULL) {
-        print_help();
-        fprintf(stderr, "error: username not set.\n");
-        exit(EXIT_FAILURE);
-    }
-
-    char* cred = (char *) malloc(strlen(domain) + strlen(username) + PASS_LEN + 4);
-
-    sprintf(cred, "%s %s", domain, username);
-
-    if ( search(fp, cred) ) {
-        fprintf(stderr, "error: credential must be unique.\n");
-        exit(EXIT_FAILURE);
-    }
-
-    sprintf(cred, "%s %s %s\n", domain, username, password);
-    puts(password);
-    translate(cred);
-    fprintf(fp, "%s", cred);
-}
-
-/*! \fn int search(FILE* fp, char* str)
- *  \brief Find credentials that contain the string.
- *  \param fp a FILE pointer.
- *  \param str a character pointer.
+ *  \param str a string.
  *  \return an integer.
  */
-int search(FILE* fp, char* str)
+int search_credential(FILE* fp, char* str)
 {
-    char* file;
+    char* file_str;
     char* temp;
-    int   n = 0;        // number of matches found
 
-    read_file(fp, &file);
-    temp = file;
+    read_database(fp, &file_str);
+    temp = file_str;
 
-    file = strtok(file, "\n");          // Split file at newlines
+    file_str = strtok(file_str, NEWLINE);   // Split at newlines
 
-    while(file != NULL) {
-        if (strstr(file, str)) {
-            puts(file);
+    int n = 0;
+    while( file_str != NULL ) {
+        if (strstr(file_str, str)) {
+            puts(file_str);
             n++;
         }
-        
-        file = strtok(NULL, "\n");
+
+        file_str = strtok(NULL, NEWLINE);
     }
 
     free(temp);
@@ -146,14 +147,14 @@ int search(FILE* fp, char* str)
 }
 
 /*! \fn char* rand_ps(void)
- *  \brief Generate a string of random characters of PASS_LEN length.
- *  \return a character pointer to a static buffer.
+ *  \brief Generate a string of <PASS_LEN> random characters.
+ *  \return a character pointer.
  */
 char* rand_ps(void)
 {
     static char pswd[PASS_LEN+1];
 
-    srand(time(0));     // Use current time as seed for random generator
+    srand( time(0) );   // Use current time as seed for random generator
 
     int c, i;
     for (i = 0; i < PASS_LEN; i++) {
